@@ -50,12 +50,11 @@ public class AuthController {
             Authentication authentication = authenticationManager
                     .authenticate(new UsernamePasswordAuthenticationToken(
                     loginDto.getUsernameOrEmail(), loginDto.getPassword()));
-            System.out.println(authentication);
+            //System.out.println(authentication);
             SecurityContextHolder.getContext().setAuthentication(authentication);
 
             // get token form tokenProvider
             String token = tokenProvider.generateToken(authentication);
-
             return ResponseEntity.ok(new JWTAuthResponse(token));
         }
 

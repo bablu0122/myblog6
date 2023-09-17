@@ -54,7 +54,6 @@ public class PostController {
     // http://localhost:8080/api/posts?pageNo=0&pageSize=3&sortBy=id
     //http://localhost:8080/api/posts?pageNo=0&pageSize=10&sortBy=content&sortDir=desc
     @GetMapping
-
     public List<PostDto> getAllPosts(
             @RequestParam(value = "pageNo",defaultValue = "0",required = false) int pageNo,
             @RequestParam(value = "pageSize",defaultValue = "5",required = false) int pageSize,

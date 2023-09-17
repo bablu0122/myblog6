@@ -25,6 +25,8 @@ public class CommentController {
                                                     @RequestBody CommentDto commentDto) {
         CommentDto dto = commentService.createComment(postId, commentDto);
         return new ResponseEntity<>(dto , HttpStatus.CREATED);
+
+
     }
 
     @GetMapping("/posts/{postId}/comments")
